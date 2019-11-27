@@ -1,6 +1,6 @@
 # Como instalar Ruby on Rails no Linux Mint (cinnamon)
 
-  Ruby on Rails (RoR) é uma estrutura de aplicativo da código aberto, públicada
+  Ruby on Rails (RoR) é uma estrutura de aplicativo de código aberto, públicada
   sob a licença MIT. É uma estrutura de aplicativo WEB do lado do servidor que segue 
   o conceito de MVC (Model-View-Controller).
 
