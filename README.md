@@ -42,33 +42,33 @@
 
 # Configurar a versão mais recente do Ruby.
 
-A versão mais recente do ruby será automaticamente instalada durante 
-a instalação do rvm, quando não houver pacote ruby no sistema.
+  A versão mais recente do ruby será automaticamente instalada durante 
+  a instalação do rvm, quando não houver pacote ruby no sistema.
 
-Nesta etapa, configuraremos a versão ruby padrão no sistema linux Mint.
+  Nesta etapa, configuraremos a versão ruby padrão no sistema linux Mint.
 
-Atualize o rvm para a versão estável mais recente.
+  Atualize o rvm para a versão estável mais recente.
 
-  $ rvm get stable --autolibs=enable
-  $ usermod -a -G rvm root
+    $ rvm get stable --autolibs=enable
+    $ usermod -a -G rvm root
 
-Agora verifique todas as versões ruby disponíveis.
+  Agora verifique todas as versões ruby disponíveis.
 
-  $ rvm list known
+    $ rvm list known
 
-E você obterá muitas versões disponíveis do ruby - instale a versão 
-estável mais recente do Ruby usando o comando rvm, como mostrado abaixo.
+  E você obterá muitas versões disponíveis do ruby - instale a versão 
+  estável mais recente do Ruby usando o comando rvm, como mostrado abaixo.
 
-  $ rvm install ruby
+    $ rvm install ruby
 
-Depois que toda a instalação estiver concluída, faça a versão atual padrão
-no sistema linux mint.  
+  Depois que toda a instalação estiver concluída, faça a versão atual padrão
+  no sistema linux mint.  
 
-  $ rvm --default use ruby-( versão mais recente )
+    $ rvm --default use ruby-( versão mais recente )
 
-Confirir a versão do ruby.
+  Conferir a versão do ruby.
 
-  $ ruby -v
+    $ ruby -v
 
 
 # Instalar o NodeJS
@@ -167,69 +167,69 @@ Confirir a versão do ruby.
 
 # Crie seu primeiro aplicativo com Rails e PostgreSQL
 
-O Ruby on Rails fornece um 'rails' de linha de comando para inicializar nosso 
-primeiro aplicativo de rails.
+  O Ruby on Rails fornece um 'rails' de linha de comando para inicializar nosso 
+  primeiro aplicativo de rails.
 
-Crie um novo projeto 'barufis_blog' com o banco de dados padrão 'PostgreSQL' 
-executando o comando rails abaixo.
+  Crie um novo projeto 'barufis_blog' com o banco de dados padrão 'PostgreSQL' 
+  executando o comando rails abaixo.
 
-  $ rails new barufis_blog -d postgresql
+    $ rails new barufis_blog -d postgresql
 
-Agora você verá o diretório 'barufis_blog', vá para esse diretório e edite o 
-o arquivo de configuração do banco de dados 'database.yml' usando o editor de sua
-preferencia (eu utilizo o visual studio code).
+  Agora você verá o diretório 'barufis_blog', vá para esse diretório e edite o 
+  o arquivo de configuração do banco de dados 'database.yml' usando o editor de sua
+  preferencia (eu utilizo o visual studio code).
 
-  $ cd barufis_blog
-  $ code .
+    $ cd barufis_blog
+    $ code .
 
-Utilizando o VS Code vá em config/database.yml e configure o arquivo comforme 
-abaixo:
+  Utilizando o VS Code vá em config/database.yml e configure o arquivo comforme 
+  abaixo:
 
-  username: rails_dev
-  password: aqwe123
-  host: localhost
-  port 5423
+    username: rails_dev
+    password: aqwe123
+    host: localhost
+    port 5423
 
-Para a seção de teste, cole essas configurações abaixo.
+  Para a seção de teste, cole essas configurações abaixo.     
 
-  host: localhost
-  port: 5432
-  username: rails_dev
-  password: aqwe123
+    host: localhost
+    port: 5432
+    username: rails_dev
+    password: aqwe123
 
-Salvar e sair.
+  Salvar e sair.
 
-Agora gere o banco de dados e verifique se não há erro.
+  Agora gere o banco de dados e verifique se não há erro.
 
-  $ rails db:setup
-  $ rails db:migrate
+    $ rails db:setup
+    $ rails db:migrate
 
-Quando toda a instalão estiver concluida, inicie o servidor web puma rails padrão
-usano o comando abaixo.
+  Quando toda a instalação estiver concluida, inicie o servidor web puma rails padrão
+  com o comando abaixo.
 
-  $ rails s
+    $ rails s
 
-O primeiro projeto de rails será executado no localhost na porta 8080
+  O primeiro projeto de rails será executado no localhost na porta 8080
 
-  http://localhost:8080
+    http://localhost:8080
 
-Abra o navegador web e digite o endereço de acima.
+  Abra o navegador web e digite o endereço de acima.
 
-Se tudo foi instalado e configurado corretamente você vera a pagina inicial
-do projeto Rails.
+  Se tudo foi instalado e configurado corretamente você vera a pagina inicial
+  do projeto Rails.
 
-Em seguida, testaremos a criação de um CRUD simples com o banco de dados
-PostgreSQL.
+  Em seguida, testaremos a criação de um CRUD simples com o banco de dados
+  PostgreSQL.
 
-Execute o comando rails abaixo:
+  Execute o comando rails abaixo:
 
-  $ rails g scaffold Post title:string body:text
-  $ rake db:migrate
+    $ rails g scaffold Post title:string body:text
+    $ rake db:migrate
 
-Execute o servidor da web novamente.
+  Execute o servidor da web novamente.
 
-  $ rails s
+    $ rails s
 
-Abra o navegador da web com a URL abaixo.
+  Abra o navegador da web com a URL abaixo.
 
-  http://localhost:8080/posts
+    http://localhost:8080/posts
