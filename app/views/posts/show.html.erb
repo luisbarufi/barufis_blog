@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= translate 'form.title' %>:</strong>
   <%= @post.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong><%= translate 'form.body' %>:</strong>
   <%= @post.body %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post), {class: "btn btn-dark"} %>
-<%= link_to 'Back', posts_path, {class: "btn btn-dark"} %>
+<%= link_to "#{translate 'form.edit'}", edit_post_path(@post), {class: "btn btn-dark"} %>
+
+<%= link_to "#{translate 'form.back'}", posts_path, {class: "btn btn-dark"} %>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <title>BarufisBlog</title>
     <%= csrf_meta_tags %>
@@ -43,24 +43,33 @@
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to 'Home', root_path, { class: 'nav-link' } %>
+          <li class="nav-item">
+            <%= link_to "#{translate 'form.home'}", root_path, { class: 'nav-link' } %>            
           </li>
           <li class="nav-item">
-            <%= link_to 'Posts', posts_path, { class: 'nav-link' } %>
+            <%= link_to "#{translate 'form.posts'}", posts_path, { class: 'nav-link' } %> 
           </li>
         </ul>
+         <div>
+            <a href="<%= request.path %>?locale=en">
+              <span class="language"><%= translate 'form.english' %></span> 
+            </a> 
+            <a href="<%= request.path %>?locale=pt-BR">
+              <span class="language"><%= translate 'form.portuguese' %></span>
+            </a>
+         </div>
         <!--
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         -->
 
       </div>
     </nav>
 
-    <main role="main" class="container">
+    <main role="main" class="container">   
+
       <%= yield %>
     </main>
 
