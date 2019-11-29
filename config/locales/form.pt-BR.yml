@@ -16,4 +16,8 @@ pt-BR:
     english: Inglês
     portuguese: Português
     submit: Enviar
-    confirm: Vocẽ tem Certeza?
+    confirm: Você tem Certeza?
+    postCreated: Postagem criada com sucesso.
+    postUpdated: Postagem alterada com sucesso.
+    postDestroyed: Postagem deletada com sucesso.
+        

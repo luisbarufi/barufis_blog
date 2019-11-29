@@ -17,4 +17,10 @@ en:
     portuguese: Portuguese
     submit: Submit
     confirm: Are you sure?
+    postCreated: Post was successfully created.
+    postUpdated: Post was successfully updated.
+    postDestroyed: Post was successfully destroyed.
+    msgError: prohibited this post from being saved    
+
+
   

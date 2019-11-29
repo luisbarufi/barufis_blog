@@ -17,7 +17,6 @@
   min-height: 75rem;
 }
 
-.language {
-  color: rgb(253, 253, 253);
-  font-size: 12px;
+.table-dark a {
+  color:#c0c0c0;
 }

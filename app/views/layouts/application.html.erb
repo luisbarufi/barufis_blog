@@ -14,6 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"></script>
+
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -50,14 +55,14 @@
             <%= link_to "#{translate 'form.posts'}", posts_path, { class: 'nav-link' } %> 
           </li>
         </ul>
-         <div>
-            <a href="<%= request.path %>?locale=en">
-              <span class="language"><%= translate 'form.english' %></span> 
-            </a> 
-            <a href="<%= request.path %>?locale=pt-BR">
-              <span class="language"><%= translate 'form.portuguese' %></span>
-            </a>
-         </div>
+        <ul class="navbar-nav mr-0">
+          <li class="nav-item">
+            <%= link_to translate('form.english'), "#{request.path}?locale=en", {class: 'nav-link'} %>
+          </li>
+          <li class="nav-item">
+            <%= link_to translate('form.portuguese'), "#{request.path}?locale=pt-BR", {class: 'nav-link'} %>
+          </li>
+        </ul>
         <!--
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -68,15 +73,13 @@
       </div>
     </nav>
 
-    <main role="main" class="container">   
+    <main role="main" class="container">
 
       <%= yield %>
     </main>
 
     <footer class="container">
-      <a href="/"> 
-        <p class="mt-5 mb-3 text-muted text-center">&copy; Barufi&rsquo;s Blog</p>
-      </a>      
+      <p class="mt-5 mb-3 text-muted text-center ">&copy; Barufi&rsquo;s Blog</p>     
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
