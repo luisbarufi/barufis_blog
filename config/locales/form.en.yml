@@ -10,7 +10,8 @@ en:
     newPost: New Post
     createPost: Create Post
     back: Back
-    editingPost: Save
+    editingPost: Editing Post
+    editingForm: Save
     home: Home
     english: English
     portuguese: Portuguese

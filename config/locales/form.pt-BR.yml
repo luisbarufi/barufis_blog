@@ -10,7 +10,8 @@ pt-BR:
     newPost: Nova Postagem
     createPost: Criar Postagem
     back: Voltar
-    editingPost: Salvar
+    editingPost: Editar Postagem
+    editingForm: Salvar
     home: Início
     english: Inglês
     portuguese: Português
