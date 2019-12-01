@@ -3,8 +3,7 @@
     <% if post.errors.any? %>
       <div id="error_explanation">
         <p> 
-          <%= pluralize(post.errors.count, 'error') %>
-            prohibited this post from being saved: 
+          <%= pluralize(post.errors.count, 'error') %> prohibited this post from being saved: 
         </p>    
         
         <ul> 
