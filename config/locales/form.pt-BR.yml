@@ -20,4 +20,18 @@ pt-BR:
     postCreated: Postagem criada com sucesso.
     postUpdated: Postagem alterada com sucesso.
     postDestroyed: Postagem deletada com sucesso.
-        
+
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "O titulo do %{model} não pode ficar em branco"
+            body:
+              blank: "O conteúdo do %{model} não pode ficar em branco"
+          template:
+            header:
+              one: "1 error prohibited this %{model} from being saved"
+              other: "%{count} errors prohibited this %{model} from being saved"
+            body: "There were problems with the following fields:"
