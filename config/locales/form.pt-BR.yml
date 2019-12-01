@@ -27,9 +27,9 @@ pt-BR:
         post:
           attributes:
             title:
-              blank: "O titulo do %{model} não pode ficar em branco"
+              blank: "O titulo não pode ficar em branco"
             body:
-              blank: "O conteúdo do %{model} não pode ficar em branco"
+              blank: "O conteúdo não pode ficar em branco"
           #template:
            #header:
             #one: "1 error prohibited this %{model} from being saved"
