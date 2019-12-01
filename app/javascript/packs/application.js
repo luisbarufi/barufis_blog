@@ -16,6 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+
 const ready = function () {
   return $('.ckeditor').each(function () {
     CKEDITOR.editorConfig = function( config ) {
