@@ -19,7 +19,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 gem 'dynamic_form'
-gem 'ckeditor', '4.1.3'
+gem 'ckeditor',  github: 'galetahub/ckeditor'
 gem 'paperclip'
 
 # Use Redis adapter to run Action Cable in production
