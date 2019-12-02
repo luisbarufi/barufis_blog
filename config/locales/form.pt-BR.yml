@@ -30,8 +30,5 @@ pt-BR:
               blank: "O titulo não pode ficar em branco"
             body:
               blank: "O conteúdo não pode ficar em branco"
-          #template:
-           #header:
-            #one: "1 error prohibited this %{model} from being saved"
-             #other: "%{count} errors prohibited this %{model} from being saved"
-            #body: "There were problems with the following fields:"
+
+              
