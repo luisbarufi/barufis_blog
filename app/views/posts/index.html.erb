@@ -15,9 +15,10 @@
 
     <tbody>
       <% @posts.each do |post| %>
+        <% body_str = strip_tags post.body.gsub('><', '> <').strip %>
         <tr>
           <td> <%= post.title %> </td>
-          <td> <%= post.body[0..20] ... %> </td>
+          <td> <%= truncate(body_str, length: 30) %> </td>
           <td> <%= link_to "<i class='fa fa-edit' title='#{translate 'form.edit'}'></i>".html_safe, edit_post_path(post) %> </td>
           <td> <%= link_to "<i class='fa fa-eye' title='#{translate 'form.show'}'></i>".html_safe, post%> </td>
           <td> <%= link_to "<i class='fa fa-trash-alt' title='#{translate 'form.destroy'}'></i>".html_safe, post, method: :delete, data: { confirm: "#{translate 'form.confirm'}" } %> </td>
