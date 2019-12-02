@@ -1,9 +1,8 @@
 
 
-<h1><%= translate 'form.editingPost' %></h1>
+<h1><%= t('form.title.edit', model: 'Postagem') %></h1>
 
 <%= render 'form', post: @post %>
 
-<%= link_to "#{translate 'form.show'}", @post, {class: "btn btn-dark"} %> 
-<%= link_to "#{translate 'form.back'}", posts_path, {class: "btn btn-dark"} %>
-
+<%= link_to "#{translate 'form_post.show'}", @post, {class: "btn btn-dark"} %>
+<%= link_to "#{translate 'form_post.back'}", posts_path, {class: "btn btn-dark"}  %> 

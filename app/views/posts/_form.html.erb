@@ -5,7 +5,7 @@
   <% if post.errors.any? %>
     <div id="error_explanation">
       <p> 
-        <%= pluralize(post.errors.count, 'error') %> prohibited this post from being saved: 
+        Oops.. 
       </p>    
       
       <ul> 
@@ -17,16 +17,16 @@
   <% end %>
   
   <div class="form-group">
-    <%= translate 'form.title' %>    
+    <%= translate 'activerecord.attributes.post.title' %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= translate 'form.body' %>      
+  <%= translate 'activerecord.attributes.post.body' %>
     <%= form.cktext_area :body, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= form.submit "#{translate 'form.editingForm'}" %>
+    <%= form.submit "#{t 'admin.form.save'}" %>
   </div>
 <% end %>

@@ -30,7 +30,27 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  menu:
+    home: Home
+    posts: Posts
+
+  activerecord:
+    models:
+      post:
+        one: Post
+        other: Posts
+
+  admin:
+    form:
+      back: Back
+  
+  form_post:
+    show: Show
+    editing_post: Editing Post
+    post_updated: Postagem alterada com sucesso.
+    new_post: Nova Postagem
+    back: Back
 
 
   

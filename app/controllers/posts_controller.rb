@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "#{translate 'form.postCreated'}" }
+        format.html { redirect_to @post, notice: "#{translate 'post.created'}" }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: "#{translate 'form.postUpdated'}" }
+        format.html { redirect_to @post, notice: "#{translate 'edit_form.post_updated'}" }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }

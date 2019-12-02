@@ -1,18 +1,20 @@
 
-
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <strong><%= translate 'form.title' %>:</strong>
+  <strong><%= translate 'activerecord.attributes.post.title' %>:</strong>
   <%= @post.title %>
+  <br><small><%= l(@post.created_at, format: :long) %></small>
 </p>
 
 <p>
-  <strong><%= translate 'form.body' %>:</strong>
+ 
+  <strong> <%= translate 'activerecord.attributes.post.body' %>:</strong>
   <%= @post.body.html_safe %>
 </p>
 
-<%= link_to "#{translate 'form.edit'}", edit_post_path(@post), {class: "btn btn-dark"} %>
+<%= link_to "#{translate 'form.button.edit'}", edit_post_path(@post), {class: "btn btn-dark"} %>
 
-<%= link_to "#{translate 'form.back'}", posts_path, {class: "btn btn-dark"} %>
+<%= link_to "#{translate 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>
 
