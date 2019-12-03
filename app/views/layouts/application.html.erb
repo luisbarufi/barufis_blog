@@ -60,25 +60,24 @@
         </ul>
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
-            <%= link_to translate('form.english'), "#{request.path}?locale=en", {class: 'nav-link'} %>
+            <%= link_to t('form.english'), "#{request.path}?locale=en", {class: 'nav-link'} %>
           </li>
           <li class="nav-item">
-            <%= link_to translate('form.portuguese'), "#{request.path}?locale=pt-BR", {class: 'nav-link'} %>
+            <%= link_to t('form.portuguese'), "#{request.path}?locale=pt-BR", {class: 'nav-link'} %>
           </li>
         </ul>
-        <!--
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        -->
+        
+        <%= form_tag(posts_path, method: :get, class:"form-inline mt-2 mt-md-0") do |f| %>
+          <input name="q" class="form-control mr-sm-2" type="text" placeholder="" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t('menu.search') %></button>
+        <% end %>
 
       </div>
     </nav>
 
     <main role="main" class="container">
-
       <%= yield %>
+      
     </main>
 
     <footer class="container">
