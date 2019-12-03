@@ -1,12 +1,16 @@
-  
+
+ <!-- 
 <h1>
-<%= t(
-      'admin.actions.new.title',
-      model_label: t('activerecord.models.post.one')
-    )
-%>
+  <%= t(
+        'admin.actions.new.title',
+        model_label: t('activerecord.models.post.one')
+      )
+  %>
 </h1>
+-->
+
+<h1> <%= t('form.button.create') %> </h1>
 
 <%= render 'form', post: @post %>
 
-<%= link_to "#{translate 'form_post.back'}", posts_path, {class: "btn btn-dark"}  %>
+<%= link_to "#{translate 'form.button.back'}", posts_path, {class: "btn btn-dark"}  %>

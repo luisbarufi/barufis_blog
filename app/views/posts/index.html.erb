@@ -18,9 +18,9 @@
         <tr>
           <td> <%= post.title %> </td>
           <td> <%= truncate(body_str, length: 30) %> </td>
-          <td> <%= link_to "<i class='fa fa-edit' title='#{translate 'form.edit'}'></i>".html_safe, edit_post_path(post) %> </td>
-          <td> <%= link_to "<i class='fa fa-eye' title='#{translate 'form.show'}'></i>".html_safe, post%> </td>
-          <td> <%= link_to "<i class='fa fa-trash-alt' title='#{translate 'form.destroy'}'></i>".html_safe, post, method: :delete, data: { confirm: "#{translate 'form.confirm'}" } %> </td>
+          <td> <%= link_to "<i class='fa fa-edit' title='#{translate 'form.button.edit'}'></i>".html_safe, edit_post_path(post) %> </td>
+          <td> <%= link_to "<i class='fa fa-eye' title='#{translate 'form.button.show'}'></i>".html_safe, post%> </td>
+          <td> <%= link_to "<i class='fa fa-trash-alt' title='#{translate 'form.button.destroy'}'></i>".html_safe, post, method: :delete, data: { confirm: "#{translate 'form.button.confirm'}" } %> </td>
         </tr> 
       <% end %>
     </tbody>
@@ -28,4 +28,4 @@
 </div>
 
 <br>
-<%= link_to "#{translate 'form_post.new_post'}", new_post_path, {class: "btn btn-dark"} %>
+<%= link_to "#{translate 'form.button.new'}", new_post_path, {class: "btn btn-dark"} %>

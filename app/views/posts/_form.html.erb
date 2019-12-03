@@ -1,7 +1,6 @@
   
 <%= form_with(model: post, local: true) do |form| %>
 
-
   <% if post.errors.any? %>
     <div id="error_explanation">
       <p> 
@@ -17,7 +16,7 @@
   <% end %>
   
   <div class="form-group">
-    <%= translate 'activerecord.attributes.post.title' %>
+    <%= translate 'form.title.title_name' %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
 

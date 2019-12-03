@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if search_params[:q].present?
+      @posts = Post.where('title LIKE ? OR body LIKE ?', "%#{search_params[:q]}%", "%#{search_params[:q]}%")
+    else
+      @posts = Post.all
+    end
   end
 
   # GET /posts/1
@@ -28,7 +32,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "#{translate 'post.created'}" }
+        format.html { redirect_to @post, notice: "#{translate 'post_controller.message_created'}" }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -42,7 +46,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: "#{translate 'edit_form.post_updated'}" }
+        format.html { redirect_to @post, notice: "#{translate 'post_controller.message_updated'}" }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -56,7 +60,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "#{translate 'form.postDestroyed'}" }
+      format.html { redirect_to posts_url, notice: "#{translate 'post_controller.message_destroy'}" }
       format.json { head :no_content }
     end
   end
@@ -70,5 +74,9 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body)
+    end
+
+    def search_params
+      params.permit(:q)
     end
 end

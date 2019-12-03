@@ -34,6 +34,7 @@ en:
   menu:
     home: Home
     posts: Posts
+    search: Search
 
   activerecord:
     models:
@@ -45,12 +46,27 @@ en:
     form:
       back: Back
   
-  form_post:
-    show: Show
-    editing_post: Editing Post
-    post_updated: Postagem alterada com sucesso.
-    new_post: Nova Postagem
-    back: Back
+  form:
+    title:
+      title_name: Title
+      name: Title
+      edit: Edit Post
+      create:
+      show: Show
+      back: Back
+    button:
+      edit: Edit
+      create: Create Post
+      show: Show
+      back: Back
+      new: New
+      destroy: Destroy
+      confirm: Are you sure?
+
+  post_controller:
+    message_updated: Post was successfully updated.
+    message_destroy: Post successfully deleted.
+    message_created: Successfully created post.
 
 
   
