@@ -1,5 +1,4 @@
 
-
 <div class="jumbotron">
 
   <h1>Barufi&rsquo;s Blog</h1>
@@ -9,3 +8,25 @@
   </p>
   
 </div>
+
+<div class="row">
+
+  <% Post.all.each do |post| %>
+    <% body_str = strip_tags post.body.gsub('><', '> <').strip %>
+    <div class="col-sm-4 mb-4">
+
+      <div class="card" >
+        <!--img src="..." class="card-img-top" alt="..."-->
+        <div class="card-body">
+          <h5 class="card-title mb-1"><%= post.title %></h5>
+          <small><%= l(post.created_at, format: :short) %></small>
+          
+          <p class="card-text mt-2"><%= body_str.truncate 100 %></p>
+          <%= link_to 'Continue lendo', post %>
+        </div>
+      </div>
+
+    </div>
+
+  <% end %>
+<div>

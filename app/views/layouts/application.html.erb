@@ -57,6 +57,13 @@
           <li class="nav-item">
             <%= link_to "#{t 'menu.posts'}", posts_path, { class: 'nav-link' } %> 
           </li>
+
+          <% if user_signed_in? %>
+            <%= link_to('SAIR', destroy_user_session_path, method: :delete, class: 'nav-link') %>
+          <% else %>
+            <%= link_to('Login', new_user_session_path, class: 'nav-link') %>
+          <% end %>
+
         </ul>
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
@@ -76,6 +83,10 @@
     </nav>
 
     <main role="main" class="container">
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
       <%= yield %>
       
     </main>

@@ -1,20 +1,17 @@
 
 <p id="notice"><%= notice %></p>
 
+<h1><%= @post.title %></h1>
+<small><%= l(@post.created_at, format: :long) %></small>
 
-<p>
-  <strong><%= translate 'activerecord.attributes.post.title' %>:</strong>
-  <%= @post.title %>
-  <br><small><%= l(@post.created_at, format: :long) %></small>
-</p>
 
-<p>
+<div class="mt-4">
  
-  <strong> <%= translate 'activerecord.attributes.post.body' %>:</strong>
   <%= @post.body.html_safe %>
-</p>
+</div>
 
-<%= link_to "#{translate 'form.button.edit'}", edit_post_path(@post), {class: "btn btn-dark"} %>
+<%= link_to "#{translate 'form.button.edit'}", edit_post_path(@post), {class: "btn btn-dark"} if user_signed_in? %>
 
-<%= link_to "#{translate 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>
+<%#= link_to "#{translate 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>
 
+<a href="javascript:history.back();">Voltar</a>
