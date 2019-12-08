@@ -22,7 +22,7 @@
           <small><%= l(post.created_at, format: :short) %></small>
           
           <p class="card-text mt-2"><%= body_str.truncate 100 %></p>
-          <%= link_to 'Continue lendo', post %>
+          <%= link_to "#{t 'cards.keep_reading'}", post %>
         </div>
       </div>
 

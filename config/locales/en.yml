@@ -35,6 +35,7 @@ en:
     home: Home
     posts: Posts
     search: Search
+    login: Logout
 
   activerecord:
     models:
@@ -77,5 +78,9 @@ en:
     didnt_receive_confirmation_instructions: Didn't receive confirmation instructions
     didnt_receive_unlock_instructions: Didn't receive unlock instructions
     send_me_reset_password_instructions: Send me reset password instructions
+  
+  cards:
+    keep_reading: keep reading
+
     
   

@@ -59,7 +59,7 @@
           </li>
 
           <% if user_signed_in? %>
-            <%= link_to('SAIR', destroy_user_session_path, method: :delete, class: 'nav-link') %>
+            <%= link_to("#{t 'menu.login'}", destroy_user_session_path, method: :delete, class: 'nav-link') %>
           <% else %>
             <%= link_to('Login', new_user_session_path, class: 'nav-link') %>
           <% end %>

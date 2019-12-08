@@ -18,14 +18,30 @@
         <tr>
           <td> <%= post.title %> </td>
           <td> <%= truncate(body_str, length: 30) %> </td>
-          <td> <%= link_to "<i class='fa fa-edit' title='#{translate 'form.button.edit'}'></i>".html_safe, edit_post_path(post) %> </td>
-          <td> <%= link_to "<i class='fa fa-eye' title='#{translate 'form.button.show'}'></i>".html_safe, post%> </td>
-          <td> <%= link_to "<i class='fa fa-trash-alt' title='#{translate 'form.button.destroy'}'></i>".html_safe, post, method: :delete, data: { confirm: "#{translate 'form.button.confirm'}" } %> </td>
-        </tr> 
+
+          <td>
+            <% if user_signed_in? %>
+              <%= link_to "<i class='fa fa-edit' title='#{translate 'form.button.edit'}'></i>".html_safe, edit_post_path(post) %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to "<i class='fa fa-eye' title='#{translate 'form.button.show'}'></i>".html_safe, post%> 
+          </td>
+          <td>
+            <% if user_signed_in? %> 
+              <%= link_to "<i class='fa fa-trash-alt' title='#{translate 'form.button.destroy'}'></i>".html_safe, post, method: :delete, data: { confirm: "#{translate 'form.button.confirm'}" } %> 
+            <% end %>  
+          </td>        
+        
+          </tr> 
       <% end %>
     </tbody>
   </table>
 </div>
 
 <br>
-<%= link_to "#{translate 'form.button.new'}", new_post_path, {class: "btn btn-dark"} %>
+<% if user_signed_in? %>
+  <%= link_to "#{translate 'form.button.new'}", new_post_path, {class: "btn btn-dark"} %>
+<% else %>
+  <%= link_to "#{t 'menu.home'}", root_path, { class: 'btn btn-dark' } %>
+<% end %>
