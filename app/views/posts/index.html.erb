@@ -2,7 +2,10 @@
 <p id="notice"><%= notice %></p>
 <h1> <%= t('menu.posts') %> </h1>
 
-<div class="table-responsive">  
+<div class="table-responsive">
+<!--
+  <%= paginate @posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm", nav_class: "d-inline-b" %>
+-->
   <table class="table table-hover table-dark">
     <thead>
       <tr>
@@ -12,7 +15,7 @@
       </tr>
     </thead>
 
-    <tbody>
+    <tbody>      
       <% @posts.each do |post| %>
         <% body_str = strip_tags post.body.gsub('><', '> <').strip %>
         <tr>
@@ -31,15 +34,18 @@
             <% if user_signed_in? %> 
               <%= link_to "<i class='fa fa-trash-alt' title='#{translate 'form.button.destroy'}'></i>".html_safe, post, method: :delete, data: { confirm: "#{translate 'form.button.confirm'}" } %> 
             <% end %>  
-          </td>        
-        
-          </tr> 
-      <% end %>
+          </td>         
+        </tr> 
+      <% end %>        
     </tbody>
   </table>
+
+  <%= paginate @posts, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm", nav_class: "d-inline-b" %>
+
 </div>
 
 <br>
+  
 <% if user_signed_in? %>
   <%= link_to "#{translate 'form.button.new'}", new_post_path, {class: "btn btn-dark"} %>
 <% else %>
