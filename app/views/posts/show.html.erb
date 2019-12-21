@@ -10,8 +10,8 @@
   <%= @post.body.html_safe %>
 </div>
 
-<%= link_to "#{translate 'form.button.edit'}", edit_post_path(@post), {class: "btn btn-dark"} if user_signed_in? %>
+<%= link_to "#{t 'form.button.edit'}", edit_post_path(@post), {class: "btn btn-dark"} if user_signed_in? %>
 
-<%#= link_to "#{translate 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>
+<%#= link_to "#{t 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>
 
 <a class="btn btn-dark" href="javascript:history.back();"><%= t('admin.form.back')%> </a>
