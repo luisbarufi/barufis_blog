@@ -1,11 +1,8 @@
-  
-<%= form_with(model: post, local: true) do |form| %>
+  <%= form_with(model: post, local: true) do |form| %>
 
   <% if post.errors.any? %>
     <div id="error_explanation">
-      <p> 
-        Oops.. 
-      </p>    
+      <p>  Oops.. </p>    
       
       <ul> 
         <% post.errors.full_messages.each do |message| %>

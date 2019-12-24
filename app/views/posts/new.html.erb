@@ -1,16 +1,5 @@
-
- <!-- 
-<h1>
-  <%= t(
-        'admin.actions.new.title',
-        model_label: t('activerecord.models.post.one')
-      )
-  %>
-</h1>
--->
-
 <h1> <%= t('form.button.create') %> </h1>
 
 <%= render 'form', post: @post %>
 
-<%= link_to "#{t 'form.button.back'}", posts_path, {class: "btn btn-dark"}  %>
+<%= link_to  "<i class='fa fa-undo' title='#{t 'form.button.back'}'></i>".html_safe, posts_path, {class: "btn btn-dark"}  %>

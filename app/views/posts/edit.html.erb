@@ -1,8 +1,6 @@
-
-
 <h1><%= t('form.title.edit') %></h1>
 
 <%= render 'form', post: @post %>
 
-<%= link_to "#{t 'form.title.show'}", @post, {class: "btn btn-dark"} %>
-<%= link_to "#{t 'form.title.back'}", posts_path, {class: "btn btn-dark"}  %> 
+<%= link_to "<i class='fa fa-eye' title='#{t 'form.button.show'}'></i>".html_safe, @post, {class: "btn btn-dark"} %>
+<%= link_to  "<i class='fa fa-undo' title='#{t 'form.button.back'}'></i>".html_safe, posts_path, {class: "btn btn-dark"}  %> 

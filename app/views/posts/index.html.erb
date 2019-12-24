@@ -1,23 +1,28 @@
-<p id="notice"><%= notice %></p>
-<h1> <%= t('menu.posts') %> </h1>
-
 <div class="table-responsive">
+  <p id="notice"><%= notice %></p>
+  <h1> <%= t('menu.posts') %> </h1>
   <table class="table table-hover table-dark">
     <thead>
       <tr>
-        <th> <%= t 'activerecord.attributes.attribute_commons.title' %> </th>
-        <th> <%= t 'activerecord.attributes.attribute_commons.body' %> </th>
+        <th>
+          <%= t 'activerecord.attributes.attribute_commons.title' %>
+        </th>
+        <th>
+          <%= t 'activerecord.attributes.attribute_commons.body' %>
+        </th>
         <th colspan="3"></th>
       </tr>
     </thead>
-
     <tbody>      
       <% @posts.each do |post| %>
         <% body_str = strip_tags post.body.gsub('><', '> <').strip %>
         <tr>
-          <td> <%= post.title %> </td>
-          <td> <%= truncate(body_str, length: 30) %> </td>
-
+          <td>
+            <%= post.title %>
+          </td>
+          <td>
+            <%= truncate(body_str, length: 30) %>
+          </td>
           <td>
             <% if user_signed_in? %>
               <%= link_to "<i class='fa fa-edit' title='#{t 'form.button.edit'}'></i>".html_safe, edit_post_path(post) %>
@@ -35,15 +40,11 @@
       <% end %>        
     </tbody>
   </table>
-
-  <%= paginate @posts, pagination_class: "pagination-sm", nav_class: "d-inline-b" %>
-
+    <%= paginate @posts, pagination_class: "pagination-sm", nav_class: "d-inline-b" %>
+  <br>    
+  <% if user_signed_in? %>
+    <%= link_to "<i class='fa fa-file-alt' title='#{t 'form.button.new'}'></i>".html_safe, new_post_path, {class: "btn btn-dark"} %>
+  <% else %>
+    <%= link_to "#{t 'menu.home'}", root_path, { class: 'btn btn-dark' } %>
+  <% end %>
 </div>
-
-<br>
-  
-<% if user_signed_in? %>
-  <%= link_to "#{t 'form.button.new'}", new_post_path, {class: "btn btn-dark"} %>
-<% else %>
-  <%= link_to "#{t 'menu.home'}", root_path, { class: 'btn btn-dark' } %>
-<% end %>
