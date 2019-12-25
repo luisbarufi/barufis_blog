@@ -42,13 +42,10 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-
       <a class="navbar-brand" >Barufi&rsquo;s Blog</a>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -57,13 +54,11 @@
           <li class="nav-item">
             <%= link_to "#{t 'menu.posts'}", posts_path, { class: 'nav-link' } %> 
           </li>
-
           <% if user_signed_in? %>
             <%= link_to("#{t 'menu.login'}", destroy_user_session_path, method: :delete, class: 'nav-link') %>
           <% else %>
-            <%= link_to('Login', new_user_session_path, class: 'nav-link') %>
+            <%= link_to('Login', new_user_session_path, class: 'nav-link') %>            
           <% end %>
-
         </ul>
         <ul class="navbar-nav mr-0">
           <li class="nav-item">
@@ -72,29 +67,27 @@
           <li class="nav-item">
             <%= link_to t('form.portuguese'), "#{request.path}?locale=pt-BR", {class: 'nav-link'} %>
           </li>
-        </ul>
-        
+        </ul>        
         <%= form_tag(posts_path, method: :get, class:"form-inline mt-2 mt-md-0") do |f| %>
           <input name="q" class="form-control mr-sm-2" type="text" placeholder="" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t('menu.search') %></button>
         <% end %>
-
       </div>
     </nav>
-
     <main role="main" class="container">
+        <div class="row">
+          <div class="col-md-5 offset-md-5">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          </div>  
+        </div>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      
       <%= yield %>
       
     </main>
-
     <footer class="container">
       <p class="mt-5 mb-3 text-muted text-center ">&copy; Barufi&rsquo;s Blog</p>     
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-Iep5TjrwnXOp2AdreAjhlprhxI5Ix8Y3I/zJd1tNQZQmonaE3i6fTdrvIG9YjOWl" crossorigin="anonymous"></script>  
   </body>
