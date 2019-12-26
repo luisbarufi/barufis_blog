@@ -2,16 +2,13 @@
   <p id="notice"><%= notice %></p>
 
   <h1><%= @post.title %></h1>
-  <small><%= l(@post.created_at, format: :long) %></small>
+  <small><%= l(@post.created_at.in_time_zone("America/Sao_Paulo"), format: :long) %></small>
 
   <div class="mt-4"> 
     <%= @post.body.html_safe %>
   </div>
-
   <%= link_to "<i class='fa fa-edit' title='#{t 'form.button.edit'}'></i>".html_safe, edit_post_path(@post), {class: "btn btn-dark"} if user_signed_in? %>
-
   <%#= link_to "#{t 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>
-
   <a class="btn btn-dark" href="javascript:history.back();"><%= "<i class='fa fa-undo' title='#{t 'form.button.back'}'></i>".html_safe%> </a>
 
   <hr>
@@ -20,7 +17,7 @@
     <% @post.comments.each do |comment| %>    
       <div class="post_comment">
         <strong><%= comment.commenter%>:</strong>
-        <small><%= l(comment.created_at, format: :long) %></small>
+        <small><%= l(comment.created_at.in_time_zone("America/Sao_Paulo"), format: :long) %></small>
         <p><%= comment.body %> </p>           
         <span style='float:right;'>
           <%= link_to "<i class='fa fa-trash-alt' title='#{t 'form.button.destroy'}'></i>".html_safe, [comment.post, comment],
@@ -30,15 +27,13 @@
       </div>
     <% end %>
   <% end %>
-  <hr> 
-  <h2>Adicionar um comentário:</h2>
+  
+  <h2 style="margin-top:50px">Adicionar um comentário:</h2>
+  
   <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
     <% if @comment && @comment.errors.any? %>
       <div id="error_explanation">
-        <h2>
-          <%= pluralize(@comment.errors.count, "error") %> prohibited
-          this comment from being saved:
-        </h2>
+        <h2>Oops..</h2>
         <ul>
           <% @comment.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -47,15 +42,15 @@
       </div>
     <% end %>
     <p>
-      <%= form.label :commenter %><br>
-      <%= form.text_field :commenter %>
+      <%= t('activerecord.attributes.post.commenter') %>
+      <%= form.text_field :commenter, class: "form-control" %>
     </p>
     <p>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %>
+      <%= t('activerecord.attributes.post.body') %>
+      <%= form.text_area :body, class: "form-control" %>
     </p>
     <p>
-      <%= form.submit %>
+      <%= form.submit "#{t 'admin.form.save_comment'}" %>
     </p>
   <% end %>
 </div>

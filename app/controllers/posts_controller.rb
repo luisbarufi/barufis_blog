@@ -7,9 +7,9 @@ class PostsController < ApplicationController
   def index
     if search_params[:q].present?
       @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{search_params[:q]}%", "%#{search_params[:q]}%")
-                    .page(params[:page]).per(6)      
+                    .page(params[:page]).per(5)      
     else
-      @posts = Post.page(params[:page]).per(6)
+      @posts = Post.page(params[:page]).per(5)
     end
   end
 

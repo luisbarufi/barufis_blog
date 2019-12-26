@@ -14,7 +14,7 @@
         <!--img src="..." class="card-img-top" alt="..."-->
         <div class="card-body">
           <h5 class="card-title mb-1"><%= post.title %></h5>          
-          <small><%= l(post.created_at, format: :short) %></small>          
+          <small><%= l(post.created_at.in_time_zone("America/Sao_Paulo"), format: :short) %></small>          
           <p class="card-text mt-2"><%= body_str.truncate 100 %></p>
           <%= link_to "#{t 'cards.keep_reading'}", post %>
         </div>

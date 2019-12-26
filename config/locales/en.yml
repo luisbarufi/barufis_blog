@@ -46,6 +46,7 @@ en:
   admin:
     form:
       back: Back
+      save_comment: Save Coment
   
   form:
     title:

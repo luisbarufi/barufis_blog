@@ -84,11 +84,12 @@ pt-BR:
         size: Tamanho
         title: Título
         type: Tipo
-        version: Versão
+        version: Versão        
 
       post:
         <<: *commons
-        body: Conteúdo        
+        body: Conteúdo
+        commenter: Autor       
 
   date:
     abbr_day_names:
@@ -445,6 +446,7 @@ pt-BR:
       confirmation: Sim, tenho certeza
       bulk_delete: "Os seguintes objetos serão excluídos podendo também excluir objetos relacionados ou deixar relacionamentos órfãos"
       new_model: "%{name} (novo)"
+      save_comment: Salvar Comentário
     export:
       confirmation: Exportar para %{name}
       select: Selecione os campos para exportar
