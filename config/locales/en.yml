@@ -42,6 +42,11 @@ en:
       post:
         one: Post
         other: Posts
+    attributes:
+      post:
+        commenter: Commenter
+        body: Body
+
 
   admin:
     form:
