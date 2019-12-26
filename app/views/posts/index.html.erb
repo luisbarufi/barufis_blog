@@ -4,12 +4,8 @@
   <table class="table table-hover table-dark">
     <thead>
       <tr>
-        <th>
-          <%= t 'activerecord.attributes.attribute_commons.title' %>
-        </th>
-        <th>
-          <%= t 'activerecord.attributes.attribute_commons.body' %>
-        </th>
+        <th><%= t 'activerecord.attributes.attribute_commons.title' %></th>
+        <th><%= t 'activerecord.attributes.attribute_commons.body' %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -17,20 +13,14 @@
       <% @posts.each do |post| %>
         <% body_str = strip_tags post.body.gsub('><', '> <').strip %>
         <tr>
-          <td>
-            <%= post.title %>
-          </td>
-          <td>
-            <%= truncate(body_str, length: 30) %>
-          </td>
+          <td><%= post.title %></td>
+          <td><%= truncate(body_str, length: 30) %></td>
           <td>
             <% if user_signed_in? %>
               <%= link_to "<i class='fa fa-edit' title='#{t 'form.button.edit'}'></i>".html_safe, edit_post_path(post) %>
             <% end %>
           </td>
-          <td>
-            <%= link_to "<i class='fa fa-eye' title='#{t 'form.button.show'}'></i>".html_safe, post%> 
-          </td>
+          <td><%= link_to "<i class='fa fa-eye' title='#{t 'form.button.show'}'></i>".html_safe, post%></td>
           <td>
             <% if user_signed_in? %> 
               <%= link_to "<i class='fa fa-trash-alt' title='#{t 'form.button.destroy'}'></i>".html_safe, post, method: :delete, data: { confirm: "#{t 'form.button.confirm'}" } %> 

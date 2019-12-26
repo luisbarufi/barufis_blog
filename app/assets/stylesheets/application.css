@@ -20,3 +20,8 @@
 .table-dark a {
   color:#c0c0c0;
 }
+
+.trash_comment {
+  float:right; 
+  margin-top: -50px;
+}
