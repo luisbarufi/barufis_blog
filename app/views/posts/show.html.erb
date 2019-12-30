@@ -1,38 +1,23 @@
 <div class="table-responsive">
-  <p id="notice">
-    <%= notice %>
-  </p>
-  <h1>
-    <%= @post.title %>
-  </h1>
-  <small>
-    <%= l(@post.created_at.in_time_zone("America/Sao_Paulo"), format: :long) %>
-  </small>
+  <p id="notice"><%= notice %></p>
+  <h1><%= @post.title %></h1>
+  <small><%= l(@post.created_at.in_time_zone("America/Sao_Paulo"), format: :long) %></small>
   <div class="mt-4">
     <%= @post.body.html_safe %>
+    <%= render 'like' %>
   </div>
   <%= link_to "<i class='fa fa-edit' title='#{t 'form.button.edit'}'></i>".html_safe, edit_post_path(@post), {class: "btn btn-dark"} if user_signed_in? %>
   <%#= link_to "#{t 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>
-  <a class="btn btn-dark" href="javascript:history.back();">
-    <%= "<i class='fa fa-undo' title='#{t 'form.button.back'}'></i>".html_safe%> 
-  </a>
+  <a class="btn btn-dark" href="javascript:history.back();"><%= "<i class='fa fa-undo' title='#{t 'form.button.back'}'></i>".html_safe%></a>
   <hr>
   <% unless @post.comments.empty? %>
     <h5>Comentários</h5>
     <% @post.comments.each do |comment| %>    
       <div class="post_comment">
-        <strong>
-          <%= comment.commenter%>:
-        </strong>
-        <small>
-          <%= time_ago_in_words(comment.created_at.in_time_zone("America/Sao_Paulo"), format: :long) %>
-        </small>
-        <p>
-          <%= comment.body %>
-        </p>           
-        <span class="trash_comment">
-          <%= link_to "<i class='fa fa-trash-alt' title='#{t 'form.button.destroy'}'></i>".html_safe, [comment.post, comment], method: :delete, data: { confirm: 'Tem certeza?' } %>
-        </span>
+        <strong><%= comment.commenter%>:</strong>
+        <small><%= time_ago_in_words(comment.created_at.in_time_zone("America/Sao_Paulo"), format: :long) %></small>
+        <p><%= comment.body %></p>           
+        <span class="trash_comment"><%= link_to "<i class='fa fa-trash-alt' title='#{t 'form.button.destroy'}'></i>".html_safe, [comment.post, comment], method: :delete, data: { confirm: 'Tem certeza?' } %></span>
       </div>
     <% end %>
   <% end %>

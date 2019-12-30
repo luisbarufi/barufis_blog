@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   paginates_per 50
   default_scope { order(created_at: :desc) }
   has_many :comments
+  has_many :likes, dependent: :destroy
 end
