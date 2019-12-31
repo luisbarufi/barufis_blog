@@ -19,6 +19,9 @@
             <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
           </td>
           <td>
+            <p><%= post.dislikes.count %> <%= (post.dislikes.count) == 1 ? 'Dislike' : 'Dislikes'%></p>
+          </td>
+          <td>
             <% if user_signed_in? %>
               <%= link_to "<i class='fa fa-edit' title='#{t 'form.button.edit'}'></i>".html_safe, edit_post_path(post) %>
             <% end %>

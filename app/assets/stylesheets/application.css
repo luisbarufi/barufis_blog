@@ -25,3 +25,10 @@
   float:right; 
   margin-top: -50px;
 }
+
+.like-dislike {
+  margin-left: -10px;
+  margin-bottom: -6px;
+  margin-top: -6px;
+  padding: 0;  
+}
