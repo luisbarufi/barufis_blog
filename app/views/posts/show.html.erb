@@ -4,8 +4,16 @@
   <small><%= l(@post.created_at.in_time_zone("America/Sao_Paulo"), format: :long) %></small>
   <div class="mt-4">
     <%= @post.body.html_safe %>
-    <%= render 'like' %>
-    <%= render 'dislike' %>
+
+    <ul class="nav">      
+      <li class="nav-link">
+        <%= render 'like' %>
+      </li>
+      <li class="nav-link">
+        <%= render 'dislike' %>
+      </li>      
+    </ul>
+    
   </div>
   <%= link_to "<i class='fa fa-edit' title='#{t 'form.button.edit'}'></i>".html_safe, edit_post_path(@post), {class: "btn btn-dark"} if user_signed_in? %>
   <%#= link_to "#{t 'admin.form.back'}", posts_path, {class: "btn btn-dark"}  %>

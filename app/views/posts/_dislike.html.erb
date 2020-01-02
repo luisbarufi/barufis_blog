@@ -1,18 +1,25 @@
 <% if user_signed_in? %>
+
   <% pre_dislike = @post.dislikes.find { |dislike| dislike.user_id == current_user.id} %>
     <% if pre_dislike %>
+
       <%= button_to post_dislike_path(@post, pre_dislike), {method: :delete, class: "btn btn-small"} do %>
         <p class='like-dislike'><i class="fa fa-thumbs-down" title='Remover o não Gostei'></i></p>    
       <% end %>
-        <!--<%= button_to 'Undislike', post_dislike_path(@post, pre_dislike), method: :delete %>-->
+
     <% else %>
+
       <%= button_to post_dislikes_path(@post), {method: :post, class: "btn btn-small"} do %>
         <p class='like-dislike'><i class="fa fa-thumbs-down" title='Marcar como não Gostei'></i></p>   
       <% end %>
-      <!--<%= button_to 'disLike', post_dislikes_path(@post), method: :post %>-->
+      
   <% end %>
+
   <p><%= @post.dislikes.count %></p>
+
 <% else %>
-  <i class="fa fa-thumbs-down" title='Você precisa estar logado'></i>
+
+  <i class="fa fa-thumbs-down" title='Você precisa estar logado' style="cursor: pointer"></i>
   <p><%= @post.dislikes.count %></p>
+
 <% end %>
