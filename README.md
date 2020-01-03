@@ -182,13 +182,21 @@
     $ cd barufis_blog
     $ code .
 
+  Em 'default: &default' acrescente 'username: postgres'
+
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      username: postgres
+
   Utilizando o VS Code vá em config/database.yml e configure o arquivo comforme 
   abaixo:
+
 
     username: rails_dev
     password: aqwe123
     host: localhost
-    port 5423
+    port 5432
 
   Para a seção de teste, cole essas configurações abaixo.     
 
