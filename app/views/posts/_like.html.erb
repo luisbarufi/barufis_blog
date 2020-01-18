@@ -1,25 +1,16 @@
 <% if user_signed_in? %>
-
-  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id } %>
-    <% if pre_like %>
-
-      <%= button_to post_like_path(@post, pre_like), {method: :delete, class: "btn btn-small"} do %>
-        <p class='like-dislike'><i class="fa fa-thumbs-up" title='Remover o Gostei'></i></p>    
-      <% end %>
-
-
-    <% else %>
-
-      <%= button_to post_likes_path(@post), {method: :post, class: "btn btn-small"} do %>
-        <p class='like-dislike'><i class="fa fa-thumbs-up" title='Marcar como Gostei'></i></p>    
-      <% end %>
-
+  <% pre_like = Like.find_by(user: current_user, post: @post) %>
+  <% if pre_like %>
+    <%= button_to post_like_path(@post, pre_like), {method: :delete, class: "btn btn-small"} do %>
+      <p class='like-dislike'><i class="fa fa-thumbs-up" title='Remover o Gostei'></i></p>    
+    <% end %>
+  <% else %>
+    <%= button_to post_likes_path(@post), {method: :post, class: "btn btn-small"} do %>
+      <p class='like-dislike'><i class="fa fa-thumbs-up" title='Marcar como Gostei'></i></p>    
+    <% end %>
   <% end %>
   <p><%= @post.likes.count %></p>
-
 <% else %>
-
   <i class="fa fa-thumbs-up" title='Você precisa estar logado' style="cursor: pointer"></i>
   <p><%= @post.likes.count %></p>
-
 <% end %>

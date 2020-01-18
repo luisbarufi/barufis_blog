@@ -3,12 +3,7 @@ class DislikesController < ApplicationController
   before_action :find_dislike, only: [:destroy]
 
   def create
-    # if already_disliked?
-    #   flash[:notice] = "You can't like more than once"
-    # else
-    #   @post.dislikes.create(user_id: current_user.id)
-    # end
-    @post.dislikes.create(user_id: current_user.id)
+    Dislike.create(user: current_user, post: @post)
     redirect_to post_path(@post)
   end
 
