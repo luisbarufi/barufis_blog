@@ -24,6 +24,7 @@ gem 'rails_admin', '~> 2.0'
 gem 'dynamic_form'
 gem 'ckeditor',  github: 'galetahub/ckeditor'
 gem 'paperclip'
+gem "nokogiri", ">= 1.10.8"
 
 gem 'devise'
 
