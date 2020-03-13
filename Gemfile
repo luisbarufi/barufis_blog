@@ -26,9 +26,9 @@ gem 'ckeditor',  github: 'galetahub/ckeditor'
 gem 'paperclip'
 gem "nokogiri", ">= 1.10.8"
 
-gem 'devise'
-
 gem 'kaminari'
+
+gem 'devise'
 
 gem "rack", ">= 2.0.8"
 # Use Redis adapter to run Action Cable in production
