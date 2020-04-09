@@ -83,7 +83,7 @@ en:
     forgot_your_password: Forgot your password
     didnt_receive_confirmation_instructions: Didn't receive confirmation instructions
     didnt_receive_unlock_instructions: Didn't receive unlock instructions
-    send_me_reset_password_instructions: Send me reset password instructions
+    reset_password_instructions: reset password instructions
   
   cards:
     keep_reading: keep reading
