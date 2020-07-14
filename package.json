@@ -2,12 +2,12 @@
   "name": "barufis_blog",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.3-1",
-    "@rails/activestorage": "^6.0.3-1",
-    "@rails/ujs": "^6.0.3-1",
+    "@rails/actioncable": "^6.0.3-2",
+    "@rails/activestorage": "^6.0.3-2",
+    "@rails/ujs": "^6.0.3-2",
     "@rails/webpacker": "^5.1.1",
     "jquery": "^3.5.1",
-    "serialize-javascript": "^3.0.0",
+    "serialize-javascript": "^4.0.0",
     "toastr": "^2.1.4",
     "turbolinks": "^5.2.0"
   },
